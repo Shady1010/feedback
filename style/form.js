@@ -46,6 +46,7 @@ function change(text)
             namePlace.innerHTML = '| Осталось ' + (lenght - name.length) + ' символа';
             namePlace.style.color = 'red';
             document.getElementById("name").style.border = '1px solid red';
+            
 
         } else{
             namePlace.style.color = 'green';
