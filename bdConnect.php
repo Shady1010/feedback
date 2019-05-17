@@ -15,7 +15,6 @@ class bdConnect
 
     function __construct()
     {
-        var_dump($_GET['name']);
         try {
             if(isset($_GET['name'], $_GET['phone'])) {
                 $bd = new PDO("$this->host; $this->bd", $this->name);

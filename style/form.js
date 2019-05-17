@@ -46,7 +46,7 @@ function change(text)
             namePlace.innerHTML = '| Осталось ' + (lenght - name.length) + ' символа';
             namePlace.style.color = 'red';
             document.getElementById("name").style.border = '1px solid red';
-            
+
 
         } else{
             namePlace.style.color = 'green';
@@ -75,33 +75,41 @@ function change(text)
 
 function connect(name, phone, comment)
 {
-    var conn = getXmlHttp();
-    conn.open('GET', 'bdConnect.php?name='+name+'&phone='+phone+'&comment='+comment, true);
-    conn.send();
     var report = document.getElementById('report');
-    if (conn.status != 200) {
-        closeForm();
 
-        report.style.display = 'block';
-        dark.id = 'shadow';
+    if(name.length >= 3 && phone.length == 11) {
+        var conn = getXmlHttp();
+        conn.open('GET', "bdConnect.php/?name=" + name + '&phone=' + phone + '&comment=' + comment, true);
+        conn.send();
 
-        document.body.appendChild(dark);
+        if (conn.status != 200) {
+            closeForm();
 
-        dark.onclick = function () {
-            dark.parentNode.removeChild(dark);
-            report.style.display = 'none';
-        };
+            report.style.display = 'block';
+            dark.id = 'shadow';
 
-    } else {
-        closeForm();
-        report.innerHTML = 'Упс..что-то пошло не так :(';
-        dark.id = 'shadow';
-        document.body.appendChild(dark);
+            document.body.appendChild(dark);
 
-        dark.onclick = function () {
-            dark.parentNode.removeChild(dark);
-            report.style.display = 'none';
-        };
+            dark.onclick = function () {
+                dark.parentNode.removeChild(dark);
+                report.style.display = 'none';
+            };
+
+        } else {
+            closeForm();
+            report.innerHTML = 'Упс..что-то пошло не так :(';
+            dark.id = 'shadow';
+            document.body.appendChild(dark);
+
+            dark.onclick = function () {
+                dark.parentNode.removeChild(dark);
+                report.style.display = 'none';
+            };
+        }
+    }else {
+        if(name.length < 3) document.getElementById("namePlace").innerHTML = 'Проверьте коректность данных!';
+
+        if(phone.length !== 11) document.getElementById("phonePlace").innerHTML = 'Номер должен состоять из 11 цифр!';
     }
 }
 
