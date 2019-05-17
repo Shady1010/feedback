@@ -1,0 +1,116 @@
+html{
+    width: 100%;
+    background: #f1f1f1;
+}
+
+body{
+    width: 95%;
+    background: #f1f1f1;
+    margin: auto;
+    font-family: sans-serif,"Times New Roman" ;
+}
+
+button{
+    background: none;
+    border: 0;
+}
+.form{
+    display: none;
+    position: relative;
+    max-width: 500px;
+    padding: 50px;
+    background: white;
+    margin: auto;
+    z-index: 2 ; /* поверх всех */
+}
+
+.form-container{
+    margin-top:50px;
+}
+.form-container button{
+    margin-bottom:5px ;
+    margin-left: 23px;
+}
+.form-container input{
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin: 0 auto 15px ;
+    text-align: center;
+    outline:none;
+}
+
+
+.form-container label{
+    display:inline-block;
+    margin-bottom: 5px;
+}
+
+.cancel{
+    float: right;
+    display: block;
+}
+
+.btn{
+    font-size: 1.7em;
+    background: #FFFFFF;
+    border: 0;
+    text-decoration: underline;
+    margin-top: 20px ;
+    position: relative;
+    right: 30px;
+    float: left;
+    display: inline-block;
+}
+.btn-sumbit{
+    margin-top: 10px ;
+    border: 0;
+    color: #f1f1f1;
+    padding: 20px;
+    background: #000;
+    font-size: 1.1em;
+    margin-right: -3px;
+    float: right;
+    display: inline;
+}
+
+#shadow {
+    position: fixed;
+    width:100%;
+    height:100%;
+    z-index:1; /* поверх всех  кроме окна*/
+    background:#000;
+    opacity: 0.5; /*прозрачность*/
+    left:0;
+    top:0;
+}
+
+.button{
+    width: 130px;
+    border-radius: 0 0 10px 10px;
+    border:1px solid #666666;
+    background: coral;
+    padding: 25px;
+    margin: auto;
+    text-align: center;
+}
+
+.report{
+    position: relative;
+    margin: auto;
+    width: 30%;
+    height: 30%;
+    text-align: center;
+    background: #ffffff;
+    padding: 50px;
+    display: none;
+    z-index: 3;
+    border: 2px solid coral;
+}
+
+.report button{
+    position: relative;
+    display: inline;
+    right: -45px;
+    top: -45px;
+}
